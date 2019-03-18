@@ -90,7 +90,7 @@ def stream(address, backend='auto', interface=None, name=None, callback=None):
             channel_data = dict(zip(channel_names, data[:, ii]))
             res.update(channel_data)
             callback(res)
-            # outlet.push_sample(data[:, ii], timestamps[ii])
+            outlet.push_sample(data[:, ii], timestamps[ii])
 
     muse = Muse(address=address, callback_eeg=push_eeg,
                 backend=backend, interface=interface, name=name)

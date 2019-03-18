@@ -4,6 +4,7 @@ import pandas as pd
 from muselsl.stream import list_muses
 from muselsl.stream import stream as start_stream
 
+
 backend = 'gatt'
 interface = 'hci0'
 
@@ -12,6 +13,7 @@ muses = list_muses(backend=backend, interface=interface)
 all_data = None
 
 def handler(data):
+    global all_data
     print('received {}'.format(data))
     all_data.append(data)
 
